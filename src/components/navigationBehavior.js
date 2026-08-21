@@ -8,12 +8,65 @@ export default function setupNavigation() {
 
 
   /* =========================================
+     HELPER FUNCTIONS
+  ========================================= */
+
+  function closeDropdown(dropdown) {
+
+    dropdown.classList.remove("open");
+
+    const toggle =
+      dropdown.querySelector(
+        ".nav-dropdown-toggle"
+      );
+
+    toggle?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+  }
+
+
+  function closeAllDropdowns() {
+
+    document
+      .querySelectorAll(
+        ".nav-dropdown.open"
+      )
+      .forEach(dropdown => {
+
+        closeDropdown(dropdown);
+
+      });
+
+  }
+
+
+  function closeMobileMenu() {
+
+    if (!mainNavigation) return;
+
+    mainNavigation.classList.remove(
+      "active"
+    );
+
+    menuToggle?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+
+  /* =========================================
      MOBILE MENU
   ========================================= */
 
   menuToggle?.addEventListener(
     "click",
-    () => {
+    event => {
+
+      event.stopPropagation();
 
       const isOpen =
         mainNavigation.classList.toggle(
@@ -22,15 +75,27 @@ export default function setupNavigation() {
 
       menuToggle.setAttribute(
         "aria-expanded",
-        isOpen
+        String(isOpen)
       );
+
+
+      /*
+       * Close dropdowns when
+       * mobile menu is closed.
+       */
+
+      if (!isOpen) {
+
+        closeAllDropdowns();
+
+      }
 
     }
   );
 
 
   /* =========================================
-     DROPDOWNS
+     DROPDOWN TOGGLES
   ========================================= */
 
   const dropdownToggles =
@@ -46,15 +111,27 @@ export default function setupNavigation() {
       event => {
 
         event.preventDefault();
+        event.stopPropagation();
+
 
         const dropdown =
-          toggle.closest(".nav-dropdown");
+          toggle.closest(
+            ".nav-dropdown"
+          );
+
+
+        if (!dropdown) return;
+
 
         const isOpen =
           dropdown.classList.contains(
             "open"
           );
 
+
+        /*
+         * Close all other dropdowns
+         */
 
         document
           .querySelectorAll(
@@ -64,33 +141,33 @@ export default function setupNavigation() {
 
             if (item !== dropdown) {
 
-              item.classList.remove(
-                "open"
-              );
-
-              item
-                .querySelector(
-                  ".nav-dropdown-toggle"
-                )
-                ?.setAttribute(
-                  "aria-expanded",
-                  "false"
-                );
+              closeDropdown(item);
 
             }
 
           });
 
 
-        dropdown.classList.toggle(
-          "open",
-          !isOpen
-        );
+        /*
+         * Toggle current dropdown
+         */
 
-        toggle.setAttribute(
-          "aria-expanded",
-          !isOpen
-        );
+        if (isOpen) {
+
+          closeDropdown(dropdown);
+
+        } else {
+
+          dropdown.classList.add(
+            "open"
+          );
+
+          toggle.setAttribute(
+            "aria-expanded",
+            "true"
+          );
+
+        }
 
       }
     );
@@ -99,39 +176,116 @@ export default function setupNavigation() {
 
 
   /* =========================================
-     CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+     CLOSE MOBILE MENU WHEN
+     A NORMAL LINK IS SELECTED
+  ========================================= */
+
+  if (mainNavigation) {
+
+    mainNavigation
+      .querySelectorAll(
+        "a:not(.nav-dropdown-toggle)"
+      )
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            closeAllDropdowns();
+
+            closeMobileMenu();
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =========================================
+     CLOSE DROPDOWN / MENU WHEN
+     CLICKING OUTSIDE
   ========================================= */
 
   document.addEventListener(
     "click",
     event => {
 
+      /*
+       * Ignore clicks inside navigation.
+       */
+
       if (
-        !event.target.closest(
-          ".nav-dropdown"
+        event.target.closest(
+          "#mainNavigation"
+        ) ||
+        event.target.closest(
+          "#menuToggle"
         )
       ) {
 
-        document
-          .querySelectorAll(
-            ".nav-dropdown.open"
-          )
-          .forEach(dropdown => {
+        return;
 
-            dropdown.classList.remove(
-              "open"
-            );
+      }
 
-            dropdown
-              .querySelector(
-                ".nav-dropdown-toggle"
-              )
-              ?.setAttribute(
-                "aria-expanded",
-                "false"
-              );
 
-          });
+      closeAllDropdowns();
+
+      closeMobileMenu();
+
+    }
+  );
+
+
+  /* =========================================
+     ESCAPE KEY
+  ========================================= */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key !== "Escape") {
+        return;
+      }
+
+
+      closeAllDropdowns();
+
+      closeMobileMenu();
+
+
+      /*
+       * Return keyboard focus
+       * to the hamburger button.
+       */
+
+      menuToggle?.focus();
+
+    }
+  );
+
+
+  /* =========================================
+     RESPONSIVE CLEANUP
+  ========================================= */
+
+  window.addEventListener(
+    "resize",
+    () => {
+
+      /*
+       * When returning to desktop,
+       * remove mobile-only state.
+       */
+
+      if (
+        window.innerWidth > 768
+      ) {
+
+        closeMobileMenu();
 
       }
 
