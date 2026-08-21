@@ -1,0 +1,256 @@
+/* =========================================
+   MARINE TECHNICAL
+========================================= */
+
+.technical-introduction {
+    background: var(--color-white);
+}
+
+.technical-introduction-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+    gap: 80px;
+}
+
+.technical-introduction-grid p {
+    margin-bottom: 22px;
+    color: var(--color-gray);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.technical-services {
+    background: #f5f8fa;
+}
+
+.technical-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.technical-card {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+    padding: 35px;
+    background: var(--color-white);
+    border: 1px solid
+        rgba(20, 50, 70, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.technical-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 40px
+        rgba(10, 40, 60, 0.09);
+}
+
+.technical-number {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.technical-card h3 {
+    margin-bottom: 12px;
+    color: var(--color-navy);
+}
+
+.technical-card p {
+    color: var(--color-gray);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SUPPORT AREAS
+========================================= */
+
+.technical-support {
+    background: var(--color-white);
+}
+
+.technical-support-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    gap: 90px;
+    align-items: center;
+}
+
+.technical-support-content h2 {
+    margin-bottom: 20px;
+}
+
+.technical-support-content > p:not(.section-label) {
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: var(--color-gray);
+    line-height: 1.8;
+}
+
+.support-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid
+        rgba(20, 50, 70, 0.12);
+}
+
+.support-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid
+        rgba(20, 50, 70, 0.12);
+}
+
+.support-item span {
+    min-width: 35px;
+    color: var(--color-accent);
+    font-weight: 800;
+}
+
+.support-item strong {
+    color: var(--color-navy);
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.technical-process {
+    background: #f5f8fa;
+}
+
+.technical-process-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.technical-process-step {
+    padding: 30px;
+    background: var(--color-white);
+    border-top: 3px solid
+        var(--color-accent);
+}
+
+.technical-process-step > span {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.technical-process-step h3 {
+    margin-bottom: 12px;
+    color: var(--color-navy);
+}
+
+.technical-process-step p {
+    color: var(--color-gray);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.technical-cta {
+    background:
+        linear-gradient(
+        120deg,
+        var(--color-navy-dark),
+        var(--color-navy)
+        );
+}
+
+.technical-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.technical-cta-box h2 {
+    max-width: 700px;
+    color: var(--color-white);
+}
+
+.technical-cta-box p:not(.section-label) {
+    max-width: 650px;
+    margin-top: 15px;
+    color:
+        rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+
+  .technical-introduction-grid,
+  .technical-support-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .technical-process-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .technical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technical-cta-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .technical-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 28px;
+  }
+
+  .technical-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -1,0 +1,242 @@
+/* =========================================
+   MARINE & OFFSHORE
+========================================= */
+
+.marine-introduction {
+    background: var(--color-white);
+}
+
+.marine-introduction-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+    gap: 80px;
+    align-items: start;
+}
+
+.marine-introduction h2 {
+    max-width: 600px;
+}
+
+.marine-introduction-grid p {
+    margin-bottom: 22px;
+    color: var(--color-gray);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CAPABILITIES
+========================================= */
+
+.marine-capabilities {
+    background: #f5f8fa;
+}
+
+.marine-services-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 55px;
+}
+
+.marine-service-card {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 25px;
+    padding: 38px;
+    background: var(--color-white);
+    border: 1px solid
+        rgba(20, 50, 70, 0.08);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.marine-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 45px
+        rgba(10, 40, 60, 0.10);
+}
+
+.marine-service-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.marine-service-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: var(--color-navy);
+}
+
+.marine-service-content p {
+    margin-bottom: 22px;
+    color: var(--color-gray);
+    line-height: 1.7;
+}
+
+.marine-service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--color-navy);
+    text-decoration: none;
+}
+
+.marine-service-link span {
+    transition: transform 0.2s ease;
+}
+
+.marine-service-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   VESSEL FEATURE
+========================================= */
+
+.marine-vessel-feature {
+    position: relative;
+    padding: 110px 0;
+    color: var(--color-white);
+    background:
+        linear-gradient(
+        120deg,
+        var(--color-navy-dark),
+        var(--color-navy)
+        );
+}
+
+.marine-vessel-feature-content {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    gap: 90px;
+    align-items: center;
+}
+
+.marine-vessel-feature h2 {
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+.marine-vessel-feature p:not(.section-label) {
+    max-width: 600px;
+    margin-bottom: 30px;
+    color:
+        rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   VESSEL TYPES
+========================================= */
+
+.vessel-types-list {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.vessel-types-list span {
+    padding: 18px 20px;
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+    background:
+        rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.marine-cta {
+    background: var(--color-white);
+}
+
+.marine-cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 55px;
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.marine-cta-box h2 {
+    max-width: 650px;
+}
+
+.marine-cta-box p:not(.section-label) {
+    max-width: 650px;
+    margin-top: 15px;
+    color:
+        rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .marine-introduction-grid,
+  .marine-vessel-feature-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .marine-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .marine-cta-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .marine-service-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 28px;
+  }
+
+  .vessel-types-list {
+    grid-template-columns: 1fr;
+  }
+
+  .marine-vessel-feature {
+    padding: 80px 0;
+  }
+
+  .marine-cta-box {
+    padding: 35px 25px;
+  }
+
+}

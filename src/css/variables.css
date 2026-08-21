@@ -1,0 +1,40 @@
+:root {
+  --color-navy: #06283d;
+  --color-navy-dark: #02131f;
+
+  --color-blue: #0b5c8e;
+  --color-ocean: #087ea4;
+  --color-cyan: #22a6c3;
+
+  --color-white: #ffffff;
+  --color-light: #f4f8fa;
+
+  --color-gray: #64748b;
+  --color-dark: #17202a;
+
+  --color-border: #dbe5ea;
+
+  --color-accent: #f2b21b;
+
+  --font-main:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  --container-width: 1200px;
+
+  --radius-small: 6px;
+  --radius-medium: 12px;
+  --radius-large: 20px;
+
+  --shadow-small:
+    0 4px 15px rgba(0, 0, 0, 0.08);
+
+  --shadow-medium:
+    0 12px 35px rgba(0, 0, 0, 0.12);
+
+  --transition:
+    0.3s ease;
+}

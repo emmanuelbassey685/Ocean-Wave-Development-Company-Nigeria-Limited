@@ -1,0 +1,110 @@
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+        90deg,
+        rgba(3, 18, 34, 0.92) 0%,
+        rgba(3, 18, 34, 0.72) 45%,
+        rgba(3, 18, 34, 0.35) 100%
+        );
+    z-index: 1;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.page-hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.page-hero-content {
+    max-width: 780px;
+    padding: 90px 0;
+}
+
+
+.page-hero-eyebrow {
+    margin-bottom: 16px;
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+.page-hero h1 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: clamp(
+        2.5rem,
+        5vw,
+        4.5rem
+    );
+    line-height: 1.05;
+    font-weight: 800;
+}
+
+
+.page-hero-description {
+    max-width: 680px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .page-hero {
+    min-height: 360px;
+  }
+
+  .page-hero-content {
+    padding: 70px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-hero-description {
+    font-size: 1rem;
+  }
+
+}
