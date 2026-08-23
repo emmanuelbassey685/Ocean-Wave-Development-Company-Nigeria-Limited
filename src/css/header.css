@@ -1,255 +1,561 @@
 /* =========================================
-   OCEAN WAVE - HEADER
+   OCEAN WAVE
+   HEADER & NAVIGATION
 ========================================= */
 
 .site-header {
+
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
+
   width: 100%;
+
   color: var(--color-white);
-  background: rgba(2, 19, 31, 0.82);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+
+  background:
+    rgba(2, 19, 31, 0.84);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
 }
 
+
+/* =========================================
+   HEADER CONTAINER
+========================================= */
+
 .header-container {
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   min-height: 82px;
+
   gap: 25px;
+
 }
+
 
 /* =========================================
    LOGO
 ========================================= */
 
 .logo {
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   flex-shrink: 0;
+
   color: var(--color-white);
+
   text-decoration: none;
+
 }
+
 
 .logo-mark {
+
   display: grid;
+
   width: 42px;
   height: 42px;
+
   place-items: center;
+
   color: var(--color-white);
-  background: var(--color-ocean);
+
+  background:
+    var(--color-ocean);
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.15);
+
   border-radius: 50%;
+
+  font-size: 0.9rem;
+
   font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    transform var(--transition),
+    background var(--transition);
+
 }
+
+
+.logo:hover .logo-mark {
+
+  transform: rotate(-5deg);
+
+  background:
+    var(--color-cyan);
+
+}
+
 
 .logo-text {
+
   display: flex;
+
   flex-direction: column;
+
+  line-height: 1.1;
+
 }
+
 
 .logo-text strong {
+
+  color: var(--color-white);
+
   font-size: 0.95rem;
+
+  font-weight: 800;
+
   letter-spacing: 0.08em;
+
 }
 
+
 .logo-text small {
+
+  margin-top: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
   font-size: 0.55rem;
+
   letter-spacing: 0.14em;
-  opacity: 0.75;
+
 }
+
 
 /* =========================================
    MAIN NAVIGATION
 ========================================= */
 
 .main-navigation {
+
   display: flex;
+
   align-items: center;
+
   margin-left: auto;
+
 }
 
+
 .main-navigation > ul {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 25px;
+
   margin: 0;
+
   padding: 0;
+
   list-style: none;
+
 }
+
 
 .main-navigation a,
 .nav-dropdown-toggle {
-  color: var(--color-white);
-  text-decoration: none;
-  font-size: 0.9rem;
+
+  color:
+    rgba(255, 255, 255, 0.92);
+
+  font-size: 0.88rem;
+
   font-weight: 700;
+
 }
+
+
+.main-navigation a {
+
+  position: relative;
+
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION HOVER
+========================================= */
+
+@media (min-width: 951px) {
+
+  .main-navigation > ul > li > a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 82px;
+
+  }
+
+
+  .main-navigation > ul > li > a::after {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 20px;
+    left: 0;
+
+    height: 2px;
+
+    content: "";
+
+    background:
+      var(--color-accent);
+
+    transform:
+      scaleX(0);
+
+    transform-origin:
+      center;
+
+    transition:
+      transform var(--transition);
+
+  }
+
+
+  .main-navigation > ul > li > a:hover::after {
+
+    transform:
+      scaleX(1);
+
+  }
+
+}
+
 
 .main-navigation a:hover,
 .nav-dropdown-toggle:hover {
-  color: var(--color-cyan);
+
+  color:
+    var(--color-cyan);
+
 }
 
+
 /* =========================================
-   NAVIGATION DROPDOWNS
+   DROPDOWN
 ========================================= */
 
 .nav-dropdown {
+
   position: relative;
+
 }
+
 
 .nav-dropdown-toggle {
+
   display: flex;
+
   align-items: center;
+
   gap: 6px;
+
+  min-height: 82px;
+
   padding: 0;
+
   border: none;
-  background: transparent;
+
+  background:
+    transparent;
+
   font: inherit;
+
   cursor: pointer;
+
 }
+
 
 .dropdown-arrow {
+
   display: inline-block;
+
+  color:
+    var(--color-accent);
+
   font-size: 0.75rem;
-  transition: transform 0.25s ease;
+
+  transition:
+    transform var(--transition);
+
 }
 
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
 .dropdown-menu {
+
   position: absolute;
-  top: calc(100% + 18px);
+
+  top: calc(100% + 10px);
+
   left: 0;
+
   z-index: 1001;
 
-  min-width: 260px;
+  min-width: 270px;
+
   margin: 0;
+
   padding: 10px 0;
 
   list-style: none;
-  background: var(--color-white);
 
-  border-top: 3px solid var(--color-accent);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background:
+    var(--color-white);
+
+  border-top:
+    3px solid
+    var(--color-accent);
+
+  border-radius:
+    0 0
+    var(--radius-small)
+    var(--radius-small);
+
+  box-shadow:
+    var(--shadow-large);
 
   opacity: 0;
+
   visibility: hidden;
-  transform: translateY(10px);
+
+  transform:
+    translateY(8px);
 
   transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease,
-    transform 0.25s ease;
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+
 }
+
 
 .dropdown-menu li {
+
   width: 100%;
+
 }
 
-.dropdown-menu a {
-  display: block;
-  padding: 12px 20px;
 
-  color: var(--color-navy);
-  font-size: 0.9rem;
+.dropdown-menu a {
+
+  display: block;
+
+  padding:
+    12px 20px;
+
+  color:
+    var(--color-navy);
+
+  font-size: 0.88rem;
+
   font-weight: 600;
+
+  line-height: 1.4;
 
   text-decoration: none;
 
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background var(--transition),
+    color var(--transition),
+    padding-left var(--transition);
+
 }
+
 
 .dropdown-menu a:hover {
-  color: var(--color-ocean);
-  background: #f2f6f8;
+
+  color:
+    var(--color-ocean);
+
+  background:
+    #f2f6f8;
+
+  padding-left: 24px;
+
 }
 
+
 /* =========================================
-   DESKTOP DROPDOWN
+   DESKTOP DROPDOWN BEHAVIOR
 ========================================= */
 
 @media (min-width: 951px) {
 
   .nav-dropdown:hover > .dropdown-menu,
   .nav-dropdown:focus-within > .dropdown-menu {
+
     opacity: 1;
+
     visibility: visible;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
+
   }
+
 
   .nav-dropdown:hover .dropdown-arrow,
   .nav-dropdown:focus-within .dropdown-arrow {
-    transform: rotate(180deg);
+
+    transform:
+      rotate(180deg);
+
   }
+
 }
+
 
 /* =========================================
    HEADER CTA
 ========================================= */
 
 .header-cta {
+
   flex-shrink: 0;
 
-  padding: 12px 18px;
+  padding:
+    12px 18px;
 
-  color: var(--color-navy);
-  background: var(--color-accent);
+  color:
+    var(--color-navy);
 
-  border-radius: var(--radius-small);
+  background:
+    var(--color-accent);
+
+  border:
+    1px solid
+    var(--color-accent);
+
+  border-radius:
+    var(--radius-small);
 
   font-size: 0.8rem;
+
   font-weight: 800;
 
   text-decoration: none;
 
   transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+
 }
 
+
 .header-cta:hover {
-  background: #ffc42f;
-  transform: translateY(-2px);
+
+  color:
+    var(--color-navy);
+
+  background:
+    #ffc42f;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    var(--shadow-small);
+
 }
+
 
 /* =========================================
    MOBILE MENU BUTTON
 ========================================= */
 
 .menu-toggle {
+
   display: none;
+
+  position: relative;
 
   width: 44px;
   height: 44px;
 
   padding: 8px;
 
-  background: transparent;
-  border: 0;
+  flex-shrink: 0;
+
+  color: var(--color-white);
+
+  background:
+    transparent;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius:
+    var(--radius-small);
 
   cursor: pointer;
+
 }
 
+
 .menu-toggle span {
+
   display: block;
 
   width: 100%;
+
   height: 2px;
 
   margin: 5px 0;
 
-  background: var(--color-white);
+  background:
+    var(--color-white);
+
+  border-radius: 2px;
 
   transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+    transform var(--transition),
+    opacity var(--transition);
+
 }
+
 
 /* =========================================
    MOBILE HEADER
@@ -258,158 +564,108 @@
 @media (max-width: 950px) {
 
   .site-header {
+
     position: absolute;
+
   }
+
 
   .header-container {
+
     min-height: 70px;
+
     gap: 12px;
+
   }
 
 
-  /* =========================================
-     LOGO
-  ========================================= */
+  /* Logo */
 
   .logo-mark {
+
     width: 38px;
     height: 38px;
+
   }
+
 
   .logo-text strong {
+
     font-size: 0.8rem;
+
   }
+
 
   .logo-text small {
+
     font-size: 0.45rem;
+
   }
 
 
-  /* =========================================
-     HIDE DESKTOP CTA
-  ========================================= */
+  /* CTA */
 
   .header-cta {
+
     display: none;
+
   }
 
 
-  /* =========================================
-     HAMBURGER BUTTON
-  ========================================= */
+  /* Hamburger */
 
   .menu-toggle {
 
     display: block;
 
-    flex-shrink: 0;
-
-    position: relative;
-
     z-index: 1003;
 
-    width: 44px;
-    height: 44px;
-
-    padding: 8px;
-
-    background: transparent;
-
-    border: 0;
-
-    cursor: pointer;
-  }
-
-  .menu-toggle span {
-
-    display: block;
-
-    width: 100%;
-
-    height: 2px;
-
-    margin: 5px 0;
-
-    background: var(--color-white);
-
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
   }
 
 
-  /* =========================================
-     HAMBURGER → X
-  ========================================= */
-
-  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
-
-    transform:
-      translateY(7px)
-      rotate(45deg);
-  }
-
-  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-
-    opacity: 0;
-  }
-
-  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
-
-    transform:
-      translateY(-7px)
-      rotate(-45deg);
-  }
-
-
-  /* =========================================
-     MOBILE NAVIGATION PANEL
-  ========================================= */
+  /* Navigation */
 
   .main-navigation {
 
     position: absolute;
 
     top: 70px;
-
     left: 0;
 
     width: 100%;
 
     display: none;
 
-    padding: 20px;
+    padding:
+      12px 20px 20px;
 
     background:
       rgba(2, 19, 31, 0.98);
 
     border-top:
-      1px solid rgba(255, 255, 255, 0.1);
+      1px solid
+      rgba(255, 255, 255, 0.1);
 
     box-shadow:
-      0 15px 35px rgba(0, 0, 0, 0.25);
+      0 15px 35px
+      rgba(0, 0, 0, 0.25);
 
-    max-height:
-      calc(100vh - 70px);
-
-    overflow-y: auto;
   }
 
 
   /*
-   * IMPORTANT:
-   * JavaScript adds .active
-   */
+     Existing JavaScript uses
+     .active on the navigation.
+  */
 
   .main-navigation.active {
 
     display: block;
+
   }
 
 
-  /* =========================================
-     MOBILE NAVIGATION LIST
-  ========================================= */
+  /* Navigation list */
 
   .main-navigation > ul {
 
@@ -423,9 +679,6 @@
 
     gap: 0;
 
-    margin: 0;
-
-    padding: 0;
   }
 
 
@@ -436,12 +689,14 @@
     border-bottom:
       1px solid
       rgba(255, 255, 255, 0.08);
+
   }
 
 
   .main-navigation > ul > li:last-child {
 
     border-bottom: none;
+
   }
 
 
@@ -449,21 +704,32 @@
 
     display: block;
 
-    width: 100%;
+    padding:
+      15px 5px;
 
-    padding: 15px 5px;
+    color:
+      rgba(255, 255, 255, 0.92);
 
     font-size: 1rem;
+
   }
 
 
-  /* =========================================
-     MOBILE DROPDOWNS
-  ========================================= */
+  /* Remove desktop underline */
+
+  .main-navigation > ul > li > a::after {
+
+    display: none;
+
+  }
+
+
+  /* Mobile dropdown */
 
   .nav-dropdown {
 
     width: 100%;
+
   }
 
 
@@ -471,28 +737,20 @@
 
     width: 100%;
 
+    min-height: auto;
+
     justify-content: space-between;
 
-    padding: 15px 5px;
+    padding:
+      15px 5px;
 
-    color: var(--color-white);
+    color:
+      var(--color-white);
 
     font-size: 1rem;
 
-    text-align: left;
   }
 
-
-  .dropdown-arrow {
-
-    transition:
-      transform 0.25s ease;
-  }
-
-
-  /* =========================================
-     MOBILE DROPDOWN MENU
-  ========================================= */
 
   .dropdown-menu {
 
@@ -511,6 +769,8 @@
 
     border-top: none;
 
+    border-radius: 0;
+
     box-shadow: none;
 
     opacity: 1;
@@ -520,64 +780,61 @@
     transform: none;
 
     display: none;
+
   }
 
-
-  /*
-   * JavaScript adds .open
-   */
 
   .nav-dropdown.open > .dropdown-menu {
 
     display: block;
+
   }
 
 
-  /* =========================================
-     DROPDOWN ARROW
-  ========================================= */
-
-  .nav-dropdown.open
-    > .nav-dropdown-toggle
-    .dropdown-arrow {
+  .nav-dropdown.open >
+  .nav-dropdown-toggle
+  .dropdown-arrow {
 
     transform:
       rotate(180deg);
+
   }
 
 
-  /* =========================================
-     DROPDOWN LINKS
-  ========================================= */
-
   .dropdown-menu a {
 
-    display: block;
-
-    padding: 13px 20px;
+    padding:
+      13px 20px;
 
     color:
-      rgba(255, 255, 255, 0.82);
+      rgba(255, 255, 255, 0.78);
 
     font-size: 0.9rem;
 
     border-left:
-      2px solid transparent;
+      2px solid
+      transparent;
+
   }
 
 
   .dropdown-menu a:hover {
 
-    color: var(--color-accent);
+    color:
+      var(--color-accent);
 
     background:
       rgba(255, 255, 255, 0.05);
 
     border-left-color:
       var(--color-accent);
+
+    padding-left: 24px;
+
   }
 
 }
+
 
 /* =========================================
    SMALL PHONES
@@ -586,34 +843,57 @@
 @media (max-width: 480px) {
 
   .header-container {
+
     min-height: 66px;
+
   }
+
 
   .logo {
+
     gap: 7px;
+
   }
+
 
   .logo-mark {
+
     width: 36px;
     height: 36px;
+
     font-size: 0.85rem;
+
   }
+
 
   .logo-text strong {
+
     font-size: 0.72rem;
+
   }
+
 
   .logo-text small {
+
     font-size: 0.39rem;
+
     letter-spacing: 0.1em;
+
   }
+
 
   .menu-toggle {
+
     width: 42px;
     height: 42px;
+
   }
 
+
   .main-navigation {
+
     top: 66px;
+
   }
+
 }

@@ -1,81 +1,599 @@
+/* =========================================
+   OCEAN WAVE
+   SERVICES & CONTENT SECTIONS
+========================================= */
+
+
+/* =========================================
+   MARINE / SERVICES SECTION
+========================================= */
+
 .marine-section {
-    background: var(--color-white);
+
+  background:
+    var(--color-white);
+
 }
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
 
 .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 50px;
-    margin-bottom: 55px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 50px;
+
+  margin-bottom: 55px;
+
 }
+
 
 .section-heading > p {
-    max-width: 450px;
-    color: var(--color-gray);
+
+  max-width: 450px;
+
+  margin: 0;
+
+  color:
+    var(--color-gray);
+
+  font-size: 1rem;
+
+  line-height: 1.75;
+
 }
+
+
+/* =========================================
+   SERVICES GRID
+========================================= */
 
 .services-grid {
-    display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
-    gap: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+
 }
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
 
 .service-card {
-    padding: 32px;
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-medium);
-    transition:
-        transform var(--transition),
-        box-shadow var(--transition),
-        border-color var(--transition);
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 290px;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  background:
+    var(--color-white);
+
+  border:
+    1px solid
+    var(--color-border);
+
+  border-radius:
+    var(--radius-medium);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+
 }
+
+
+/* Subtle top accent */
+
+.service-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background:
+    var(--color-ocean);
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left;
+
+  transition:
+    transform var(--transition);
+
+}
+
+
+/* Hover */
 
 .service-card:hover {
-    transform: translateY(-7px);
-    border-color: var(--color-cyan);
-    box-shadow: var(--shadow-medium);
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    var(--color-cyan);
+
+  box-shadow:
+    var(--shadow-medium);
+
 }
 
-.service-top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
+
+.service-card:hover::before {
+
+  transform:
+    scaleX(1);
+
 }
 
-.service-number {
-    color: var(--color-gray);
-    font-size: 0.75rem;
-    font-weight: 800;
+
+/* =========================================
+   SERVICE ICON
+========================================= */
+
+.service-card-icon {
+
+  display: grid;
+
+  width: 54px;
+
+  height: 54px;
+
+  flex-shrink: 0;
+
+  margin-bottom: 28px;
+
+  place-items: center;
+
+  color:
+    var(--color-ocean);
+
+  background:
+    var(--color-light);
+
+  border-radius: 50%;
+
+  font-size: 1.35rem;
+
+  transition:
+    color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+
 }
 
-.service-icon {
-    display: grid;
-    width: 48px;
-    height: 48px;
-    place-items: center;
-    color: var(--color-ocean);
-    background: var(--color-light);
-    border-radius: 50%;
-    font-size: 1.3rem;
+
+.service-card:hover
+.service-card-icon {
+
+  color:
+    var(--color-white);
+
+  background:
+    var(--color-ocean);
+
+  transform:
+    scale(1.05);
+
 }
+
+
+/* =========================================
+   SERVICE CONTENT
+========================================= */
+
+.service-card-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+}
+
 
 .service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.35rem;
+
+  margin:
+    0 0 13px;
+
+  color:
+    var(--color-navy);
+
+  font-size: 1.25rem;
+
+  line-height: 1.25;
+
 }
+
 
 .service-card p {
-    min-height: 80px;
-    margin-bottom: 25px;
-    color: var(--color-gray);
-    font-size: 0.92rem;
+
+  margin: 0;
+
+  color:
+    var(--color-gray);
+
+  font-size: 0.93rem;
+
+  line-height: 1.7;
+
 }
 
-.service-card a {
-    color: var(--color-ocean);
-    font-size: 0.85rem;
-    font-weight: 800;
+
+/* =========================================
+   SERVICE CARD FOCUS
+========================================= */
+
+.service-card:focus-within {
+
+  border-color:
+    var(--color-cyan);
+
+  box-shadow:
+    var(--shadow-medium);
+
+}
+
+
+/* =========================================
+   GENERIC CONTENT SECTION
+========================================= */
+
+.content-section {
+
+  background:
+    var(--color-white);
+
+}
+
+
+.content-section--light {
+
+  background:
+    var(--color-light);
+
+}
+
+
+/* =========================================
+   CONTENT GRID
+========================================= */
+
+.content-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 60px;
+
+  align-items: center;
+
+}
+
+
+/* =========================================
+   CONTENT TEXT
+========================================= */
+
+.content-text {
+
+  max-width: 700px;
+
+}
+
+
+.content-text p {
+
+  margin-bottom: 18px;
+
+  color:
+    var(--color-gray);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+}
+
+
+.content-text p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.feature-list {
+
+  display: grid;
+
+  gap: 14px;
+
+  margin:
+    25px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.feature-list li {
+
+  position: relative;
+
+  padding-left: 28px;
+
+  color:
+    var(--color-dark);
+
+  font-size: 0.95rem;
+
+  line-height: 1.6;
+
+}
+
+
+.feature-list li::before {
+
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  color:
+    var(--color-accent);
+
+  font-weight: 800;
+
+}
+
+
+/* =========================================
+   SECTION CTA
+========================================= */
+
+.section-cta {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 55px;
+
+  padding:
+    35px 40px;
+
+  background:
+    var(--color-navy);
+
+  border-radius:
+    var(--radius-medium);
+
+}
+
+
+.section-cta h3 {
+
+  margin-bottom: 8px;
+
+  color:
+    var(--color-white);
+
+  font-size: 1.45rem;
+
+}
+
+
+.section-cta p {
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 0.92rem;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .services-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+  }
+
+
+  .section-heading {
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+  }
+
+
+  .content-grid {
+
+    gap: 40px;
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .section-heading {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+
+  }
+
+
+  .section-heading > p {
+
+    max-width: 100%;
+
+  }
+
+
+  .services-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+  }
+
+
+  .service-card {
+
+    min-height: auto;
+
+    padding: 28px;
+
+  }
+
+
+  .service-card-icon {
+
+    margin-bottom: 22px;
+
+  }
+
+
+  .content-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+  }
+
+
+  .section-cta {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding:
+      28px;
+
+  }
+
+
+  .section-cta .btn {
+
+    width: 100%;
+
+  }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+  .service-card {
+
+    padding: 24px;
+
+  }
+
+
+  .service-card h3 {
+
+    font-size: 1.15rem;
+
+  }
+
+
+  .service-card p {
+
+    font-size: 0.9rem;
+
+  }
+
+
+  .section-cta {
+
+    padding:
+      24px;
+
+  }
+
+
+  .section-cta h3 {
+
+    font-size: 1.25rem;
+
+  }
+
 }

@@ -8,7 +8,8 @@ import "../css/global.css";
 import "../css/header.css";
 import "../css/footer.css";
 import "../css/responsive.css";
-import "../css/marine-technical.css";
+import "../css/services.css";
+import "../css/page-hero.css";
 
 
 const technicalServices = [
@@ -89,16 +90,13 @@ app.innerHTML = `
 
   <main>
 
-
     ${PageHero({
-      eyebrow:
-        "MARINE TECHNICAL & ENGINEERING",
+      eyebrow: "MARINE & OFFSHORE SERVICES",
 
-      title:
-        "Technical Support for Reliable Marine Operations",
+      title: "Marine Technical & Engineering Support",
 
       description:
-        "Providing practical marine engineering and technical support to help vessels, equipment and offshore operations perform safely and efficiently."
+        "Reliable technical and engineering support for vessels and offshore marine operations."
     })}
 
 

@@ -4,6 +4,7 @@ export default function PageHero({
   description = "",
   image = "/images/hero/ocean-wave-hero.jpg"
 }) {
+
   return `
     <section
       class="page-hero"
