@@ -9,7 +9,7 @@ import "../css/header.css";
 import "../css/footer.css";
 import "../css/responsive.css";
 import "../css/page-hero.css";
-import "../css/services.css";
+import "../css/projects.css";
 
 const app = document.querySelector("#app");
 
@@ -20,16 +20,18 @@ app.innerHTML = `
   <main>
 
     ${PageHero({
-      eyebrow: "PROJECTS & CAPABILITIES",
-      title: "Delivering Solutions Across Marine, Offshore & Industrial Operations",
+      eyebrow: "OUR PROJECTS",
+      title: "Delivering Reliable Solutions Across Marine, Offshore & Industrial Operations",
       description:
-        "Supporting projects through marine services, engineering, procurement, logistics, maintenance and technical expertise."
+        "Ocean Wave Development Company Nigeria Limited provides practical technical, marine, engineering, procurement and operational support for clients across diverse industries."
     })}
 
 
-    <!-- INTRODUCTION -->
+    <!-- =========================================
+         PROJECT INTRODUCTION
+    ========================================== -->
 
-    <section class="section">
+    <section class="section projects-intro">
 
       <div class="container">
 
@@ -38,11 +40,11 @@ app.innerHTML = `
           <div>
 
             <p class="section-label">
-              OUR PROJECT CAPABILITIES
+              OUR EXPERIENCE
             </p>
 
             <h2>
-              Experience Built Around Operational Requirements
+              Supporting Projects From Planning to Execution
             </h2>
 
           </div>
@@ -50,26 +52,28 @@ app.innerHTML = `
         </div>
 
 
-        <div class="about-page-content">
+        <div class="projects-intro-content">
 
           <p>
             Ocean Wave Development Company Nigeria Limited
-            provides integrated support for projects and
-            operational activities across the marine, offshore,
-            oil & gas, engineering and industrial sectors.
+            supports projects requiring dependable marine,
+            offshore, engineering, procurement, logistics
+            and facility support services.
           </p>
 
           <p>
-            Our capabilities bring together marine operations,
-            vessel support, engineering consultancy, project
-            management, procurement, logistics and facility
-            maintenance.
+            Our approach combines practical technical
+            knowledge, operational coordination and
+            reliable supply capabilities to help clients
+            achieve safe, efficient and timely project
+            delivery.
           </p>
 
           <p>
-            We work with clients to understand project
-            requirements and provide practical solutions that
-            support safe, reliable and efficient execution.
+            Our project capabilities cover marine and
+            offshore operations, oil & gas support,
+            engineering consultancy, procurement,
+            logistics and facility maintenance.
           </p>
 
         </div>
@@ -79,7 +83,9 @@ app.innerHTML = `
     </section>
 
 
-    <!-- PROJECT CAPABILITIES -->
+    <!-- =========================================
+         PROJECT PORTFOLIO
+    ========================================== -->
 
     <section class="section section-alt">
 
@@ -92,170 +98,237 @@ app.innerHTML = `
           </p>
 
           <h2>
-            Areas We Support
+            Our Areas of Project Support
           </h2>
 
           <p>
-            Our multidisciplinary capabilities allow us to
-            support a wide range of projects and operational
-            requirements.
+            Flexible project support designed around
+            the operational requirements of our clients.
           </p>
 
         </div>
 
 
-        <div class="services-grid">
+        <div class="projects-grid">
 
 
-          <article class="service-card">
+          <!-- PROJECT 01 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               01
             </div>
 
-            <h3>
-              Marine & Offshore
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Vessel charter, marine technical support,
-              inspection, crewing, marine supplies and
-              offshore operational support.
-            </p>
+              <span class="project-category">
+                MARINE & OFFSHORE
+              </span>
 
-            <a
-              href="/pages/marine-offshore.html"
-              class="btn btn-outline"
-            >
-              Explore Marine Services
-            </a>
+              <h3>
+                Marine & Offshore Operations
+              </h3>
+
+              <p>
+                Supporting vessel chartering, marine
+                technical services, vessel inspection,
+                crewing, marine supplies and offshore
+                operational requirements.
+              </p>
+
+              <a
+                href="/pages/marine-offshore.html"
+                class="project-link"
+              >
+                Explore Marine Services →
+              </a>
+
+            </div>
 
           </article>
 
 
-          <article class="service-card">
+          <!-- PROJECT 02 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               02
             </div>
 
-            <h3>
-              Oil & Gas
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Supporting oil and gas operations with technical,
-              marine, project, procurement and logistics
-              capabilities.
-            </p>
+              <span class="project-category">
+                OIL & GAS
+              </span>
 
-            <a
-              href="/pages/oil-gas.html"
-              class="btn btn-outline"
-            >
-              Explore Oil & Gas
-            </a>
+              <h3>
+                Oil & Gas Support Projects
+              </h3>
+
+              <p>
+                Providing operational, technical,
+                equipment supply, procurement and
+                maintenance support for oil and gas
+                activities.
+              </p>
+
+              <a
+                href="/pages/oil-gas.html"
+                class="project-link"
+              >
+                Explore Oil & Gas →
+              </a>
+
+            </div>
 
           </article>
 
 
-          <article class="service-card">
+          <!-- PROJECT 03 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               03
             </div>
 
-            <h3>
-              Engineering Projects
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Engineering consultancy, technical advisory,
-              assessment and project engineering support.
-            </p>
+              <span class="project-category">
+                ENGINEERING
+              </span>
 
-            <a
-              href="/pages/engineering-consultancy.html"
-              class="btn btn-outline"
-            >
-              Engineering Services
-            </a>
+              <h3>
+                Engineering & Technical Projects
+              </h3>
+
+              <p>
+                Supporting clients with engineering
+                consultancy, technical coordination,
+                project planning and practical
+                engineering solutions.
+              </p>
+
+              <a
+                href="/pages/engineering-consultancy.html"
+                class="project-link"
+              >
+                Explore Engineering →
+              </a>
+
+            </div>
 
           </article>
 
 
-          <article class="service-card">
+          <!-- PROJECT 04 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               04
             </div>
 
-            <h3>
-              Project Management
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Planning, coordination, execution monitoring and
-              project support across technical and operational
-              environments.
-            </p>
+              <span class="project-category">
+                PROCUREMENT
+              </span>
 
-            <a
-              href="/pages/project-management.html"
-              class="btn btn-outline"
-            >
-              Project Management
-            </a>
+              <h3>
+                Procurement & Logistics
+              </h3>
+
+              <p>
+                Coordinating procurement, material
+                sourcing, transportation and logistics
+                support for project and operational
+                requirements.
+              </p>
+
+              <a
+                href="/pages/procurement-logistics.html"
+                class="project-link"
+              >
+                Explore Procurement →
+              </a>
+
+            </div>
 
           </article>
 
 
-          <article class="service-card">
+          <!-- PROJECT 05 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               05
             </div>
 
-            <h3>
-              Procurement & Logistics
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Sourcing, supplier coordination, transportation,
-              material handling and project logistics support.
-            </p>
+              <span class="project-category">
+                FACILITY MANAGEMENT
+              </span>
 
-            <a
-              href="/pages/procurement-logistics.html"
-              class="btn btn-outline"
-            >
-              Procurement Services
-            </a>
+              <h3>
+                Facility Maintenance Projects
+              </h3>
+
+              <p>
+                Providing maintenance and operational
+                support designed to help facilities
+                remain safe, functional and efficient.
+              </p>
+
+              <a
+                href="/pages/facility-maintenance.html"
+                class="project-link"
+              >
+                Explore Maintenance →
+              </a>
+
+            </div>
 
           </article>
 
 
-          <article class="service-card">
+          <!-- PROJECT 06 -->
 
-            <div class="service-card-icon">
+          <article class="project-card">
+
+            <div class="project-card-number">
               06
             </div>
 
-            <h3>
-              Facility Maintenance
-            </h3>
+            <div class="project-card-content">
 
-            <p>
-              Preventive and corrective maintenance,
-              inspections and technical facility support.
-            </p>
+              <span class="project-category">
+                PROJECT MANAGEMENT
+              </span>
 
-            <a
-              href="/pages/facility-maintenance.html"
-              class="btn btn-outline"
-            >
-              Facility Services
-            </a>
+              <h3>
+                Project Management & Coordination
+              </h3>
+
+              <p>
+                Supporting project planning, execution,
+                coordination, monitoring and delivery
+                across marine, engineering and industrial
+                activities.
+              </p>
+
+              <a
+                href="/pages/project-management.html"
+                class="project-link"
+              >
+                Explore Project Management →
+              </a>
+
+            </div>
 
           </article>
 
@@ -267,7 +340,9 @@ app.innerHTML = `
     </section>
 
 
-    <!-- PROJECT DELIVERY -->
+    <!-- =========================================
+         PROJECT DELIVERY
+    ========================================== -->
 
     <section class="section">
 
@@ -280,127 +355,86 @@ app.innerHTML = `
           </p>
 
           <h2>
-            From Planning to Execution
+            Our Approach to Project Execution
           </h2>
-
-          <p>
-            Our project support approach is designed to maintain
-            clear communication, effective coordination and
-            dependable execution.
-          </p>
 
         </div>
 
 
-        <div class="services-grid">
+        <div class="project-process-grid">
 
 
-          <article class="service-card">
+          <article class="process-card">
 
-            <div class="service-card-icon">
+            <span>
               01
-            </div>
+            </span>
 
             <h3>
               Understand
             </h3>
 
             <p>
-              We identify project objectives, technical
-              requirements, operational priorities and
-              deliverables.
+              We understand the client's operational
+              requirements, project objectives and
+              technical needs.
             </p>
 
           </article>
 
 
-          <article class="service-card">
+          <article class="process-card">
 
-            <div class="service-card-icon">
+            <span>
               02
-            </div>
+            </span>
 
             <h3>
               Plan
             </h3>
 
             <p>
-              We establish the resources, activities,
-              responsibilities and coordination requirements
-              necessary for execution.
+              We coordinate resources, suppliers,
+              technical requirements and project
+              activities.
             </p>
 
           </article>
 
 
-          <article class="service-card">
+          <article class="process-card">
 
-            <div class="service-card-icon">
+            <span>
               03
-            </div>
-
-            <h3>
-              Coordinate
-            </h3>
-
-            <p>
-              We coordinate technical, marine, procurement,
-              logistics and operational activities as required.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">
-              04
-            </div>
+            </span>
 
             <h3>
               Execute
             </h3>
 
             <p>
-              Project activities are supported through
-              structured execution and operational coordination.
+              We support practical project execution
+              with attention to quality, safety and
+              operational requirements.
             </p>
 
           </article>
 
 
-          <article class="service-card">
+          <article class="process-card">
 
-            <div class="service-card-icon">
-              05
-            </div>
-
-            <h3>
-              Monitor
-            </h3>
-
-            <p>
-              Progress, requirements and operational issues are
-              monitored to support project objectives.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-card-icon">
-              06
-            </div>
+            <span>
+              04
+            </span>
 
             <h3>
               Deliver
             </h3>
 
             <p>
-              We focus on completing activities according to
-              agreed requirements, timelines and operational
-              expectations.
+              We focus on reliable delivery and
+              effective coordination throughout the
+              project lifecycle.
             </p>
 
           </article>
@@ -413,97 +447,9 @@ app.innerHTML = `
     </section>
 
 
-    <!-- PROJECT SECTORS -->
-
-    <section class="section section-alt">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <p class="section-label">
-              INDUSTRIES WE SUPPORT
-            </p>
-
-            <h2>
-              Multidisciplinary Project Support
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <h3>
-              Marine Operations
-            </h3>
-
-            <p>
-              Supporting vessel operations, marine services,
-              offshore activities and related operational
-              requirements.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Offshore Operations
-            </h3>
-
-            <p>
-              Providing technical, marine and logistics support
-              for offshore projects and facilities.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Oil & Gas
-            </h3>
-
-            <p>
-              Supporting project and operational requirements
-              within the oil and gas environment.
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <h3>
-              Engineering
-            </h3>
-
-            <p>
-              Providing engineering consultancy and technical
-              support for projects and operational assets.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA -->
+    <!-- =========================================
+         CTA
+    ========================================== -->
 
     <section class="section cta-section">
 
@@ -512,26 +458,25 @@ app.innerHTML = `
         <div class="cta-content">
 
           <p class="section-label">
-            START A PROJECT
+            START YOUR PROJECT
           </p>
 
           <h2>
-            Let's Discuss Your Project Requirements
+            Let's Discuss Your Next Project
           </h2>
 
           <p>
-            Whether you require marine services, engineering,
-            procurement, logistics, project management or
-            facility support, Ocean Wave Development Company
-            Nigeria Limited is ready to discuss your
-            requirements.
+            Contact Ocean Wave Development Company
+            Nigeria Limited to discuss your marine,
+            offshore, engineering, procurement or
+            industrial project requirements.
           </p>
 
           <a
             href="/pages/contact.html"
             class="btn btn-primary"
           >
-            Discuss Your Project
+            Request a Quote
           </a>
 
         </div>

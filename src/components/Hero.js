@@ -2,6 +2,7 @@ export default function Hero() {
   return `
     <section class="hero" id="home">
 
+      <!-- HERO BACKGROUND IMAGE -->
       <div class="hero-background">
         <img
           src="/images/hero/ocean-wave-hero.png"
@@ -9,6 +10,7 @@ export default function Hero() {
         />
       </div>
 
+      <!-- IMAGE OVERLAY -->
       <div class="hero-overlay"></div>
 
       <div class="container hero-content">
@@ -18,8 +20,7 @@ export default function Hero() {
         </p>
 
         <h1>
-          Reliable Marine &
-          Offshore
+          Reliable Marine & Offshore
           <span>Solutions.</span>
         </h1>
 

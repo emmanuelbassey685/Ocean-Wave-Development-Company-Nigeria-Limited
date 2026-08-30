@@ -1,0 +1,377 @@
+/* =========================================
+   OCEAN WAVE
+   PROJECTS PAGE
+========================================= */
+
+.projects-intro-content {
+
+    max-width: 850px;
+}
+
+
+.projects-intro-content p {
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-gray);
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 55px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 330px;
+
+    padding: 35px;
+
+    background:
+        var(--color-white);
+
+    border:
+        1px solid
+        rgba(2, 19, 31, 0.08);
+
+    border-radius:
+        var(--radius-small);
+
+    box-shadow:
+        var(--shadow-small);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.project-card::before {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    content: "";
+
+    background:
+        var(--color-ocean);
+
+    transform:
+        scaleY(0);
+
+    transform-origin:
+        bottom;
+
+    transition:
+        transform var(--transition);
+}
+
+
+.project-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--shadow-large);
+}
+
+
+.project-card:hover::before {
+
+    transform:
+        scaleY(1);
+
+    transform-origin:
+        top;
+}
+
+
+/* =========================================
+   PROJECT NUMBER
+========================================= */
+
+.project-card-number {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-white);
+
+    background:
+        var(--color-navy);
+
+    border-radius: 50%;
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+}
+
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.project-card-content {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.project-category {
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-ocean);
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.project-card h3 {
+
+    margin-bottom: 15px;
+
+    color:
+        var(--color-navy);
+
+    font-size: 1.35rem;
+
+    line-height: 1.25;
+}
+
+
+.project-card p {
+
+    margin-bottom: 25px;
+
+    color:
+        var(--color-gray);
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   PROJECT LINK
+========================================= */
+
+.project-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    color:
+        var(--color-ocean);
+
+    font-size: 0.85rem;
+
+    font-weight: 800;
+
+    transition:
+        color var(--transition);
+}
+
+
+.project-link:hover {
+
+    color:
+        var(--color-blue);
+}
+
+
+/* =========================================
+   PROJECT PROCESS
+========================================= */
+
+.project-process-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+    margin-top: 55px;
+}
+
+
+.process-card {
+
+    padding: 30px;
+
+    background:
+        #f5f8fa;
+
+    border:
+        1px solid
+        rgba(2, 19, 31, 0.06);
+
+    border-radius:
+        var(--radius-small);
+}
+
+
+.process-card > span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 20px;
+
+    color:
+        var(--color-white);
+
+    background:
+        var(--color-ocean);
+
+    border-radius: 50%;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+}
+
+
+.process-card h3 {
+
+    margin-bottom: 12px;
+
+    color:
+        var(--color-navy);
+
+    font-size: 1.2rem;
+}
+
+
+.process-card p {
+
+    color:
+        var(--color-gray);
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROJECT CTA
+========================================= */
+
+.projects-page .cta-section {
+
+    margin-top: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .projects-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .project-process-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .projects-grid {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+    }
+
+
+    .project-card {
+
+        min-height: auto;
+
+        padding: 28px;
+    }
+
+
+    .project-process-grid {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+    }
+}

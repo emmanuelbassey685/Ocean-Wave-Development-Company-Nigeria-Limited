@@ -269,25 +269,24 @@ export default function setupNavigation() {
 
 
   /* =========================================
-     RESPONSIVE CLEANUP
-  ========================================= */
+   RESPONSIVE CLEANUP
+========================================= */
 
-  window.addEventListener(
-    "resize",
-    () => {
+window.addEventListener(
+  "resize",
+  () => {
 
-      /*
-       * When returning to desktop,
-       * remove mobile-only state.
-       */
+    /*
+     * Header switches to desktop
+     * above 950px.
+     */
 
-      if (
-        window.innerWidth > 768
-      ) {
+    if (window.innerWidth > 950) {
 
-        closeMobileMenu();
+      closeMobileMenu();
+      closeAllDropdowns();
 
-      }
+    }
 
     }
   );
