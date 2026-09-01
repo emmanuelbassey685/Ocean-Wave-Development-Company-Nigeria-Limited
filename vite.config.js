@@ -90,6 +90,11 @@ export default defineConfig({
           "pages/projects.html"
         ),
 
+        careers: resolve(
+          rootDir,
+          "pages/careers.html"
+        ),
+
         contact: resolve(
           rootDir,
           "pages/contact.html"

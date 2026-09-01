@@ -149,6 +149,12 @@ export default function Navigation() {
           </a>
         </li>
 
+        <!-- CAREERS -->
+        <li>
+          <a href="/pages/careers.html">
+            Careers
+          </a>
+        </li>
 
         <!-- CONTACT -->
         <li>
